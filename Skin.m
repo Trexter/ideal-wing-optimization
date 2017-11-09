@@ -8,7 +8,7 @@ classdef Skin
     end
     
     methods
-        
+        function obj = Skin(a,b,c)
     end
 end
 
