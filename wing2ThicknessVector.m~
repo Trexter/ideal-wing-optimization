@@ -1,0 +1,7 @@
+function [outputArg1,outputArg2] = wing2ThicknessVector(wing)
+%turn a general wing into a ordered thickness vector
+
+
+
+end
+
