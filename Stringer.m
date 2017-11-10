@@ -3,8 +3,8 @@ classdef Stringer
     %   Detailed explanation goes here
     
     properties
-        area
-        material
+        area=0.01 % m^2
+        material = Material
     end
     
     methods

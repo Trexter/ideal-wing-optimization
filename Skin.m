@@ -2,13 +2,16 @@ classdef Skin
     % there are 6 skins on our airfoil
     
     properties
-        stringers
-        thickness
-        material
+        stringers;
+        thickness; % m^2
+        material; %
     end
     
     methods
-        function obj = Skin(a,b,c)
+        function obj = Skin()
+            obj.thickness = 0.01;
+            obj.material = Material;
+        end
     end
 end
 

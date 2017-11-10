@@ -10,6 +10,11 @@ classdef Material
     end
     
     methods
+        
+        function obj = Material()
+            
+        end
+        
         function E = getYoungsModulus(obj)
             E = obj.youngs_modulus_list(obj.type);
         end
