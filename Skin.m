@@ -2,9 +2,9 @@ classdef Skin
     % there are 6 skins on our airfoil
     
     properties
-        stringers;
+        stringers; % empty by default should be created columnwise
         thickness; % m
-        material; %
+        material; 
     end
     
     methods
