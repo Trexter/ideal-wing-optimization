@@ -9,7 +9,7 @@ function [new_wing] = optimizeWingDimensionsLocally(wing)
     
     [x_optim, new_mass] = fmincon(objective_fn, x0, zeros(length(x0)), zeros(length(x0), 1), zeros(length(x0)), zeros(length(x0), 1), lb, ub);
     
-    new_wing = dimensionVector2Wing(wing, x_optim);
+    new_wing = dimensionVector2Wing(wing, x)
     
     disp(new_mass)
 end
