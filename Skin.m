@@ -4,6 +4,7 @@ classdef Skin
     properties
         stringers; % empty by default should be created columnwise
         thickness; % m
+        length; % m
         material; 
     end
     
