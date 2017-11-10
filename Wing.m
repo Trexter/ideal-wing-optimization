@@ -19,6 +19,7 @@ classdef Wing
         skin_bl; % the top left skin
         stringer8;
         web_l; % the left web
+        
     end
     
     methods

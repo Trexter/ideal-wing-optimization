@@ -8,6 +8,7 @@ function [fitness] = evaluateWingFitness(wing)
 FOS = 1.5; %the factor of saftey for yielding
 
 % first compute the mass of this wing
+mass = computeWingMass(wing)
 
 end
 
