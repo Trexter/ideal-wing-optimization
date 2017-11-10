@@ -4,8 +4,6 @@ function [final_fn] = formObjectiveMassFunctionDynamically(wing)
 %areas], next stringer area, next skin thickness, [next skin stringer
 %areas], etc...
 
-size = length(wing2ThicknessVector(wing));
-
 index = 1; % the starting index of the x vector
 
 %start with stringer1
@@ -24,9 +22,71 @@ end
 
 %-=-=-=-=-=-=-=-=-=-
 
-% finally sum up these functions
-for it = (1:1:size)
-    final_fn = @(x)(final_fn(x))
+%stringer2
+mass_fn{index} = @(x)(x(index) * wing.stringer2.material.getDensity);
+index = index + 1;
+
+%top middle skin and its stringers
+mass_fn{index} = @(x)(x(index) * wing.skin_tm.length * wing.skin_tm.material.getDensity);
+index = index + 1;
+
+%skin stringers
+for s = wing.skin_tm.stringers
+    mass_fn{index} = @(x)(x(index) * s.material.getDensity);
+    index = index + 1;
 end
+
+%-=-=-=-=-=-=-=-=-=-
+
+%stringer3
+mass_fn{index} = @(x)(x(index) * wing.stringer3.material.getDensity);
+index = index + 1;
+
+%top right skin and its stringers
+mass_fn{index} = @(x)(x(index) * wing.skin_tr.length * wing.skin_tr.material.getDensity);
+index = index + 1;
+
+%skin stringers
+for s = wing.skin_tr.stringers
+    mass_fn{index} = @(x)(x(index) * s.material.getDensity);
+    index = index + 1;
+end
+
+%-=-=-=-=-=-=-=-=-=-
+
+%stringer4
+mass_fn{index} = @(x)(x(index) * wing.stringer4.material.getDensity);
+index = index + 1;
+
+%right web and its stringers
+mass_fn{index} = @(x)(x(index) * wing.web_r.length * wing.web_r.material.getDensity);
+index = index + 1;
+
+%skin stringers
+for s = wing.web_r.stringers
+    mass_fn{index} = @(x)(x(index) * s.material.getDensity);
+    index = index + 1;
+end
+
+%-=-=-=-=-=-=-=-=-=-
+
+%stringer5
+mass_fn{index} = @(x)(x(index) * wing.stringer5.material.getDensity);
+index = index + 1;
+
+%bottom right skin and its stringers
+mass_fn{index} = @(x)(x(index) * wing.skin_br.length * wing.skin_r.material.getDensity);
+index = index + 1;
+
+%skin stringers
+for s = wing.skin_tr.stringers
+    mass_fn{index} = @(x)(x(index) * s.material.getDensity);
+    index = index + 1;
+end
+
+%-=-=-=-=-=-=-=-=-=-
+
+% finally sum up these functions
+final_fn = @(x) sum(cellfun(@(y) y(x), mass_fn));
 end
 
