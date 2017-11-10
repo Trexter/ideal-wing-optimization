@@ -1,6 +1,0 @@
-function [fitness] = evaluateWingFitness(wing)
-% this functions purpose is to evauate a wing's fitness for use in a
-% genetic algorithm. General functionality:
-% mass ~~ 0 => fitness ~~ 
-end
-

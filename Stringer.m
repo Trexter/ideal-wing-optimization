@@ -3,11 +3,22 @@ classdef Stringer
     %   Detailed explanation goes here
     
     properties
-        area=0.01 % m^2
-        material = Material
+        area; % m^2
+        position; %[m, m]
+        material;
     end
     
     methods
+        
+        function [obj] = Stringer(pos)
+            assert(length(pos) == 2);
+            obj.position = pos;
+            
+            obj.area = 0.001;
+            
+            obj.material = Material;
+            
+        end
         
     end
 end
