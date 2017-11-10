@@ -4,6 +4,8 @@ function [final_fn] = formObjectiveMassFunctionDynamically(wing)
 %areas], next stringer area, next skin thickness, [next skin stringer
 %areas], etc...
 
+size = length(wing2ThicknessVector(wing));
+
 index = 1; % the starting index of the x vector
 
 %start with stringer1
@@ -23,6 +25,8 @@ end
 %-=-=-=-=-=-=-=-=-=-
 
 % finally sum up these functions
-final_fn = @(x) sum(cellfun(@(y) y(x), mass_fn));
+for it = (1:1:size)
+    final_fn = @(x)(final_fn(x))
+end
 end
 
