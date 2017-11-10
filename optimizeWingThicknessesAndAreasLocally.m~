@@ -1,0 +1,6 @@
+function [new_wing] = optimizeWingThicknessesAndAreasLocally(wing)
+    
+    
+
+end
+

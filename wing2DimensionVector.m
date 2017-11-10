@@ -1,4 +1,4 @@
-function [x] = wing2ThicknessVector(wing)
+function [x] = wing2DimensionVector(wing)
 %turn a general wing into a ordered thickness vector
 
 index = 1;

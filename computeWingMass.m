@@ -3,7 +3,7 @@ function [mass] = computeWingMass(wing)
 
 mass_fn = formObjectiveMassFunctionDynamically(wing);
 
-mass = mass_fn(wing2ThicknessVector(wing));
+mass = mass_fn(wing2DimensionVector(wing));
 
 end
 
