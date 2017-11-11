@@ -134,6 +134,10 @@ end
 
 %-=-=-=-=-=-=-=-=-=-
 
+%test = @(x)(cellfun(@(y) y(x), mass_fn));
+%test(wing2DimensionVector(wing))
+
+
 % finally sum up these functions
 final_fn = @(x) sum(cellfun(@(y) y(x), mass_fn));
 end

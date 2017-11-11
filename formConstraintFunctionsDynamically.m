@@ -7,9 +7,14 @@ I_func = formIFunctionDynamically(wing);
 
 % form the maximum shear no yield and no buckle inequality (<= 0)
 index = 1;
+cineq_index = 1;
 
 s = wing.stringer1;
-cineq{1} = @(x)(max_shear * s.position(2) * x(index) / I_func(x) - s.material.getYieldStrength)
+cineq{cineq_index} = @(x)(max_shear * s.position(2) * x(index) / I_func(x) - s.material.getYieldStrength)
+index = index + 2; % skip the skin
+cineq_index = cineq_index + 1;
+
+for 
 
 end
 

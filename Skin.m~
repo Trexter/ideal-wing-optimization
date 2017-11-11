@@ -17,17 +17,15 @@ classdef Skin
         end
         
         function taucr_pt2 = computeTauCriticalPerThickness2(obj)
-            a_over_b = [1.0, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0, 6.0, 7.0];
-            K_vals = [15.5, 13, 12.15, 11.6, 11.25, 11, 10.75, 10.5, 10.3, 10.2, 10, 9.8, 9.75, 9, 9];
+            a_over_b = [1.0, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0];
+            K_vals = [15.5, 13, 12.15, 11.6, 11.25, 11, 10.75, 10.5, 10.3, 10.2, 10, 9.8, 9.75];
             
             % assume a = 0.75 !!!!!!
             a = 0.75;
             
-            stringerCount = length(obj.stringers);
+            stringerCount = length(obj.stringers)
             
-            K = interp1(a_over_b, K_vals, a/(obj.length/(stringerCount+1)));
-            
-            assert(~isnan(K))
+            K = interp1(a_over_b, K_vals, a/(obj.length/(stringerCount+1)))
             
             taucr_pt2 = K*pi^2/12 * obj.material.getYoungsModulus / (obj.length/(stringerCount+1))^2;
         end
