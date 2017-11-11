@@ -6,8 +6,10 @@ function [constraint_fn] = formConstraintFunctionsDynamically(wing, max_shear, m
 I_func = formIFunctionDynamically(wing);
 
 % form the maximum shear no yield and no buckle inequality (<= 0)
+index = 1;
+
 s = wing.stringer1;
-cineq{1} = @(x)(max_shear * s.position(2) * s.area / I_func(x) - s.material.getYieldStrength)
+cineq{1} = @(x)(max_shear * s.position(2) * x(index) / I_func(x) - s.material.getYieldStrength)
 
 end
 
