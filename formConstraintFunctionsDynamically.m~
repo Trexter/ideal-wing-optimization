@@ -1,0 +1,8 @@
+function [constraint_fn] = formConstraintFunctionsDynamically(wing, max_shear, min_shear, shear_center)
+% form all constraints for the nonlinear program
+
+% form the maximum shear no yield and no buckle inequality
+cineq{1} = @(x)()
+
+end
+
