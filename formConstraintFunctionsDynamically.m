@@ -20,9 +20,12 @@ cineq{cineq_index} = @(x)((max_shear * s.position(2) * x(index) / I_func(x)) - (
 
 index = index + 2; %skip skin buckle for now
 
-
+% convert all cineqs to one function
 cineq_vector = @(x)(cellfun(@(y) y(x), cineq))
 cineq_vector(wing2DimensionVector(wing))
+
+%combine ceqs and cineqs
+constraint_fn = @(x){cineq_vector(x), 0}
 
 end
 
