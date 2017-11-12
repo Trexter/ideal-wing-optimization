@@ -25,6 +25,10 @@ c = add_c;
 
 c = [c, add_c];
 
+syms q0;
+
+q_vec = formShearFlows(q0, dp_vec);
+
 %-=-=-=-=-=-=-=-=-=-=-=- 
 ceq = [];
 
