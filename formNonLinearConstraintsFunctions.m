@@ -25,12 +25,17 @@ c = [((max_shear * s.position(2) / I_tot) - s.material.getYieldStrength)];
 %c(c_index) = (max_shear * s.position(2) * x(index) / I_func(x))
 c = [c, ((max_shear * s.position(2) / I_tot) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
 
+dp_vec = (max_shear * s.position(2) * x(index) / I_tot);
+
 index = index + 2; % skip skin
 
 for s = wing.skin_tl.stringers
     c = [c, ((max_shear * s.position(2) / I_tot) - s.material.getYieldStrength)];
 %c(c_index) = (max_shear * s.position(2) * x(index) / I_func(x))
     c = [c, ((max_shear * s.position(2) / I_tot) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+    
+    dp_vec = [dp_vec, (max_shear * s.position(2) * x(index) / I_tot)];
+    
     index = index + 1;
 end
 
@@ -40,13 +45,16 @@ s = wing.stringer2;
 c = [c, ((max_shear * s.position(2) / I_tot) - s.material.getYieldStrength)];
 %c(c_index) = (max_shear * s.position(2) * x(index) / I_func(x))
 c = [c, ((max_shear * s.position(2) / I_tot) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
-
+dp_vec = [dp_vec, (max_shear * s.position(2) * x(index) / I_tot)];
 index = index + 2; % skip skin
 
 for s = wing.skin_tm.stringers
     c = [c, ((max_shear * s.position(2) / I_tot) - s.material.getYieldStrength)];
 %c(c_index) = (max_shear * s.position(2) * x(index) / I_func(x))
     c = [c, ((max_shear * s.position(2) / I_tot) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+    
+    dp_vec = [dp_vec, (max_shear * s.position(2) * x(index) / I_tot)];
+    
     index = index + 1;
 end
 
@@ -57,12 +65,17 @@ c = [c, ((max_shear * s.position(2) / I_tot) - s.material.getYieldStrength)];
 %c(c_index) = (max_shear * s.position(2) * x(index) / I_func(x))
 c = [c, ((max_shear * s.position(2) / I_tot) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
 
+dp_vec = [dp_vec, (max_shear * s.position(2) * x(index) / I_tot)];
+
 index = index + 2; % skip skin
 
 for s = wing.skin_tr.stringers
     c = [c, ((max_shear * s.position(2) / I_tot) - s.material.getYieldStrength)];
 %c(c_index) = (max_shear * s.position(2) * x(index) / I_func(x))
     c = [c, ((max_shear * s.position(2) / I_tot) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+    
+    dp_vec = [dp_vec, (max_shear * s.position(2) * x(index) / I_tot)];
+    
     index = index + 1;
 end
 
@@ -73,12 +86,17 @@ c = [c, ((max_shear * s.position(2) / I_tot) - s.material.getYieldStrength)];
 %c(c_index) = (max_shear * s.position(2) * x(index) / I_func(x))
 c = [c, ((max_shear * s.position(2) / I_tot) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
 
+dp_vec = [dp_vec, (max_shear * s.position(2) * x(index) / I_tot)];
+
 index = index + 2; % skip skin
 
 for s = wing.web_r.stringers
     c = [c, ((max_shear * s.position(2) / I_tot) - s.material.getYieldStrength)];
 %c(c_index) = (max_shear * s.position(2) * x(index) / I_func(x))
     c = [c, ((max_shear * s.position(2) / I_tot) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+    
+    dp_vec = [dp_vec, (max_shear * s.position(2) * x(index) / I_tot)];
+    
     index = index + 1;
 end
 
@@ -89,12 +107,17 @@ c = [c, ((max_shear * s.position(2) / I_tot) - s.material.getYieldStrength)];
 %c(c_index) = (max_shear * s.position(2) * x(index) / I_func(x))
 c = [c, ((max_shear * s.position(2) / I_tot) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
 
+dp_vec = [dp_vec, (max_shear * s.position(2) * x(index) / I_tot)];
+
 index = index + 2; % skip skin
 
 for s = wing.skin_br.stringers
     c = [c, ((max_shear * s.position(2) / I_tot) - s.material.getYieldStrength)];
 %c(c_index) = (max_shear * s.position(2) * x(index) / I_func(x))
     c = [c, ((max_shear * s.position(2) / I_tot) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+    
+    dp_vec = [dp_vec, (max_shear * s.position(2) * x(index) / I_tot)];
+    
     index = index + 1;
 end
 
@@ -105,12 +128,17 @@ c = [c, ((max_shear * s.position(2) / I_tot) - s.material.getYieldStrength)];
 %c(c_index) = (max_shear * s.position(2) * x(index) / I_func(x))
 c = [c, ((max_shear * s.position(2) / I_tot) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
 
+dp_vec = [dp_vec, (max_shear * s.position(2) * x(index) / I_tot)];
+
 index = index + 2; % skip skin
 
 for s = wing.skin_bm.stringers
     c = [c, ((max_shear * s.position(2) / I_tot) - s.material.getYieldStrength)];
 %c(c_index) = (max_shear * s.position(2) * x(index) / I_func(x))
     c = [c, ((max_shear * s.position(2) / I_tot) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+    
+    dp_vec = [dp_vec, (max_shear * s.position(2) * x(index) / I_tot)];
+    
     index = index + 1;
 end
 
@@ -121,12 +149,17 @@ c = [c, ((max_shear * s.position(2) / I_tot) - s.material.getYieldStrength)];
 %c(c_index) = (max_shear * s.position(2) * x(index) / I_func(x))
 c = [c, ((max_shear * s.position(2) / I_tot) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
 
+dp_vec = [dp_vec, (max_shear * s.position(2) * x(index) / I_tot)];
+
 index = index + 2; % skip skin
 
 for s = wing.skin_bl.stringers
     c = [c, ((max_shear * s.position(2) / I_tot) - s.material.getYieldStrength)];
 %c(c_index) = (max_shear * s.position(2) * x(index) / I_func(x))
     c = [c, ((max_shear * s.position(2) / I_tot) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+    
+    dp_vec = [dp_vec, (max_shear * s.position(2) * x(index) / I_tot)];
+    
     index = index + 1;
 end
 
@@ -137,18 +170,24 @@ c = [c, ((max_shear * s.position(2) / I_tot) - s.material.getYieldStrength)];
 %c(c_index) = (max_shear * s.position(2) * x(index) / I_func(x))
 c = [c, ((max_shear * s.position(2) / I_tot) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))]
 
+dp_vec = [dp_vec, (max_shear * s.position(2) * x(index) / I_tot)];
+
 index = index + 2; % skip skin
 
 for s = wing.web_l.stringers
     c = [c, ((max_shear * s.position(2) / I_tot) - s.material.getYieldStrength)];
 %c(c_index) = (max_shear * s.position(2) * x(index) / I_func(x))
     c = [c, ((max_shear * s.position(2) / I_tot) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+    
+    dp_vec = [dp_vec, (max_shear * s.position(2) * x(index) / I_tot)];
+    
     index = index + 1;
 end
 
 %-=-=-=-=-=-=-=-=-=-=-=-
+ceq = [];
 
-ceq = [x(1) - 0.001];
+
 
 
 %=-=-=-=-=-diff and form-=-=-=-=

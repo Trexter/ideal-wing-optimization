@@ -13,7 +13,7 @@ classdef Material
     methods
         
         function obj = Material()
-            obj.type = 5; % set a default material
+            obj.type = 3; % set a default material
         end
         
         function E = getYoungsModulus(obj)

@@ -13,8 +13,6 @@ function [new_wing] = optimizeWingDimensionsLocally(wing, max_shear, min_shear, 
     
     new_wing = dimensionVector2Wing(wing, x_optim);
     
-    disp(x_optim)
-    
     disp(new_mass)
 end
 
