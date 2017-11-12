@@ -11,7 +11,7 @@ x = sym('x', [1, wing_dim], 'real');
 % FOS should all ready be taken into account
 
 %!!!!!!!!!!!!!!!!!!!!
-a = 1;
+a = 0.75;
 
 %compute the I
 I_tot = computeITotalFunction(x, wing);
@@ -38,7 +38,11 @@ moment_sum = formMomentSum(wing, q_vec);
 
 q0_solved = solve(moment_sum == 0.35 * max_shear, q0);
 
-%q_vec = simplify(subs(q_vec, q0, q0_solved), 100)
+q_vec_final = (subs(q_vec, q0, q0_solved));
+
+[add_c] = formSkinBuckleConstraint(wing, x, q_vec_final);
+
+c = [c, add_c];
 
 ceq = subs(torsion_sum, q0, q0_solved);
 ceq(2) = x(3) - x(5);
