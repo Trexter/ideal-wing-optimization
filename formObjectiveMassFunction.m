@@ -143,8 +143,8 @@ end
 %-=-=-=-=-=-=-=-=-=-
 
 
-mass = mass_fn;
-grad = jacobian(mass_fn, x)';
+mass = matlabFunction(mass_fn, 'vars', x);
+grad = matlabFunction(jacobian(mass_fn, x)', 'vars', x);
 
 end
 
