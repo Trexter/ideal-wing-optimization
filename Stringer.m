@@ -14,7 +14,7 @@ classdef Stringer
             assert(length(pos) == 2);
             obj.position = pos;
             
-            obj.area = 0.0001;
+            obj.area = 0.001;
             
             obj.material = Material;
             
