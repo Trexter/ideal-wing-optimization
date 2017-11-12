@@ -34,7 +34,14 @@ q_vec = formShearFlows(q0, dp_vec);
 
 torsion_sum = formTorsionSum(wing, x, q_vec);
 
-moment_sum = formMomentSum(wing, q_vec)
+moment_sum = formMomentSum(wing, q_vec);
+
+q0_solved = solve(moment_sum == 0.35 * max_shear, q0);
+
+%q_vec = simplify(subs(q_vec, q0, q0_solved), 100)
+
+ceq = subs(torsion_sum, q0, q0_solved);
+ceq(2) = x(3) - x(5);
 
 %=-=-=-=-=-diff and form-=-=-=-=
 
@@ -42,7 +49,7 @@ c_fn = matlabFunction(c, 'vars', x);
 ceq_fn = matlabFunction(ceq, 'vars', x);
 
 DC_fn = matlabFunction(jacobian(c, x)', 'vars', x);
-DCeq_fn = matlabFunction(jacobian(ceq, x), 'vars', x);
+DCeq_fn = matlabFunction(jacobian(ceq, x)', 'vars', x);
 
 end
 

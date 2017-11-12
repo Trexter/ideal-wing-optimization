@@ -7,7 +7,7 @@ function [new_wing] = optimizeWingDimensionsLocally(wing, max_shear, min_shear, 
     x0 = wing2DimensionVector(wing); % initial guess of the wing dims
     
     ub = ones(1, length(x0));
-    lb = zeros(1, length(x0));
+    lb = ones(1, length(x0)) * 0.0001;
     
     options = optimoptions(@fmincon,'Algorithm','sqp');
     options = optimoptions(options,'SpecifyObjectiveGradient',true,'SpecifyConstraintGradient',true);

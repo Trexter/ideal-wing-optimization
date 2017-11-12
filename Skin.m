@@ -11,7 +11,7 @@ classdef Skin
     
     methods
         function obj = Skin()
-            obj.thickness = 0.0026; % the default thickness
+            obj.thickness = 0.01; % the default thickness
             obj.material = Material;
             
         end
