@@ -25,12 +25,15 @@ c = add_c;
 
 c = [c, add_c];
 
+%-=-=-=-=-=-=-=-=-=-=-=- 
+ceq = [];
+
 syms q0;
 
 q_vec = formShearFlows(q0, dp_vec);
 
-%-=-=-=-=-=-=-=-=-=-=-=- 
-ceq = [];
+torsion_sum = formTorsionSum(wing, x, q_vec);
+
 
 
 %=-=-=-=-=-diff and form-=-=-=-=

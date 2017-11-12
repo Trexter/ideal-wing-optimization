@@ -4,7 +4,7 @@ function [q_vec] = formShearFlows(q0, dp_vec)
 
 q_vec = q0;
 
-for index = (1:length(dp_vec))
+for index = (1:(length(dp_vec)-1))
     
    q_vec(index+1) = q_vec(index) - dp_vec(index);
     

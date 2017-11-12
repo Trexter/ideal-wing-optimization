@@ -10,7 +10,7 @@ dp_vec = (shear * s.position(2) * x(index) / I_tot);
 
 c = [(abs(dp_vec(length(dp_vec)) / x(index)) - s.material.getYieldStrength)];
 %c(c_index) = (shear * s.position(2) * x(index) / I_func(x))
-c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+c = [c, ((dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
 
 index = index + 2; % skip skin
 
@@ -20,7 +20,7 @@ for s = wing.skin_tl.stringers
     
     c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - s.material.getYieldStrength)];
 %c(c_index) = (shear * s.position(2) * x(index) / I_func(x))
-    c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+    c = [c, ((dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
     
     index = index + 1;
 end
@@ -33,7 +33,7 @@ dp_vec = [dp_vec, (shear * s.position(2) * x(index) / I_tot)];
 
 c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - s.material.getYieldStrength)];
 %c(c_index) = (shear * s.position(2) * x(index) / I_func(x))
-c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+c = [c, ((dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
 
 index = index + 2; % skip skin
 
@@ -43,7 +43,7 @@ for s = wing.skin_tm.stringers
     
     c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - s.material.getYieldStrength)];
 %c(c_index) = (shear * s.position(2) * x(index) / I_func(x))
-    c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+    c = [c, ((dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
     
     index = index + 1;
 end
@@ -56,7 +56,7 @@ dp_vec = [dp_vec, (shear * s.position(2) * x(index) / I_tot)];
 
 c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - s.material.getYieldStrength)];
 %c(c_index) = (shear * s.position(2) * x(index) / I_func(x))
-c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+c = [c, ((dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
 
 index = index + 2; % skip skin
 
@@ -66,7 +66,7 @@ for s = wing.skin_tr.stringers
     
     c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - s.material.getYieldStrength)];
 %c(c_index) = (shear * s.position(2) * x(index) / I_func(x))
-    c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+    c = [c, ((dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
     
     index = index + 1;
 end
@@ -79,7 +79,7 @@ dp_vec = [dp_vec, (shear * s.position(2) * x(index) / I_tot)];
 
 c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - s.material.getYieldStrength)];
 %c(c_index) = (shear * s.position(2) * x(index) / I_func(x))
-c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+c = [c, ((dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
 
 index = index + 2; % skip skin
 
@@ -89,7 +89,7 @@ for s = wing.web_r.stringers
     
     c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - s.material.getYieldStrength)];
 %c(c_index) = (shear * s.position(2) * x(index) / I_func(x))
-    c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+    c = [c, ((dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
     
     index = index + 1;
 end
@@ -102,7 +102,7 @@ dp_vec = [dp_vec, (shear * s.position(2) * x(index) / I_tot)];
 
 c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - s.material.getYieldStrength)];
 %c(c_index) = (shear * s.position(2) * x(index) / I_func(x))
-c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+c = [c, ((dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
 
 index = index + 2; % skip skin
 
@@ -112,7 +112,7 @@ for s = wing.skin_br.stringers
     
     c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - s.material.getYieldStrength)];
 %c(c_index) = (shear * s.position(2) * x(index) / I_func(x))
-    c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+    c = [c, ((dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
     
     index = index + 1;
 end
@@ -125,7 +125,7 @@ dp_vec = [dp_vec, (shear * s.position(2) * x(index) / I_tot)];
 
 c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - s.material.getYieldStrength)];
 %c(c_index) = (shear * s.position(2) * x(index) / I_func(x))
-c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+c = [c, ((dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
 
 index = index + 2; % skip skin
 
@@ -135,7 +135,7 @@ for s = wing.skin_bm.stringers
     
     c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - s.material.getYieldStrength)];
 %c(c_index) = (shear * s.position(2) * x(index) / I_func(x))
-    c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+    c = [c, ((dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
     
     index = index + 1;
 end
@@ -148,7 +148,7 @@ dp_vec = [dp_vec, (shear * s.position(2) * x(index) / I_tot)];
 
 c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - s.material.getYieldStrength)];
 %c(c_index) = (shear * s.position(2) * x(index) / I_func(x))
-c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+c = [c, ((dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
 
 index = index + 2; % skip skin
 
@@ -158,7 +158,7 @@ for s = wing.skin_bl.stringers
     
     c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - s.material.getYieldStrength)];
 %c(c_index) = (shear * s.position(2) * x(index) / I_func(x))
-    c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+    c = [c, ((dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
     
     index = index + 1;
 end
@@ -171,7 +171,7 @@ dp_vec = [dp_vec, (shear * s.position(2) * x(index) / I_tot)];
 
 c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - s.material.getYieldStrength)];
 %c(c_index) = (shear * s.position(2) * x(index) / I_func(x))
-c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))]
+c = [c, ((dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))]
 
 index = index + 2; % skip skin
 
@@ -181,7 +181,7 @@ for s = wing.web_l.stringers
     
     c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - s.material.getYieldStrength)];
 %c(c_index) = (shear * s.position(2) * x(index) / I_func(x))
-    c = [c, (abs(dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
+    c = [c, ((dp_vec(length(dp_vec)) / x(index)) - (pi^2*s.material.getYoungsModulus*computeStringerIFunction(x(index))/a^2))];
     
     index = index + 1;
 end
