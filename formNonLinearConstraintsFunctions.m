@@ -34,7 +34,7 @@ q_vec = formShearFlows(q0, dp_vec);
 
 torsion_sum = formTorsionSum(wing, x, q_vec);
 
-
+moment_sum = formMomentSum(wing, q_vec)
 
 %=-=-=-=-=-diff and form-=-=-=-=
 
