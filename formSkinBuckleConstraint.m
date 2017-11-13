@@ -18,6 +18,8 @@ for it = (1:(length(skin.stringers)+1))
     q_index = q_index + 1;
 end
 
+x(x_index)
+
 x_index = x_index + 2 + length(skin.stringers); 
 %-=-=-=-=-=-
 
@@ -28,7 +30,7 @@ for it = (1:(length(skin.stringers)+1))
     c = [c,(abs(q_vec(q_index) / x(x_index)) - skin.tau_cr_per_thickness2 * x(x_index)^2)];
     q_index = q_index + 1;
 end
-
+x(x_index)
 x_index = x_index + 2 + length(skin.stringers); 
 %-=-=-=-=-=-
 % skin_tr
@@ -38,7 +40,7 @@ for it = (1:(length(skin.stringers)+1))
     c = [c,(abs(q_vec(q_index) / x(x_index)) - skin.tau_cr_per_thickness2 * x(x_index)^2)];
     q_index = q_index + 1;
 end
-
+x(x_index)
 x_index = x_index + 2 + length(skin.stringers); 
 %-=-=-=-=-=-
 % web_r
@@ -53,12 +55,12 @@ x_index = x_index + 2 + length(skin.stringers);
 %-=-=-=-=-=-
 % skin_br
 skin = wing.skin_br;
-
+x(x_index)
 for it = (1:(length(skin.stringers)+1))
     c = [c,(abs(q_vec(q_index) / x(x_index)) - skin.tau_cr_per_thickness2 * x(x_index)^2)];
     q_index = q_index + 1;
 end
-
+x(x_index)
 x_index = x_index + 2 + length(skin.stringers); 
 %-=-=-=-=-=-
 % skin_bm
@@ -83,7 +85,7 @@ x_index = x_index + 2 + length(skin.stringers);
 %-=-=-=-=-=-
 % web_l
 skin = wing.web_l;
-
+x(x_index)
 for it = (1:(length(skin.stringers))) %if there are no stringers stop
     c = [c,(abs(q_vec(q_index) / x(x_index)) - skin.tau_cr_per_thickness2 * x(x_index)^2)];
     q_index = q_index + 1;

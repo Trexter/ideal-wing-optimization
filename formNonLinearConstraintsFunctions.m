@@ -45,7 +45,7 @@ q_vec_final = (subs(q_vec, q0, q0_solved));
 c = [c, add_c];
 
 ceq = subs(torsion_sum, q0, q0_solved);
-ceq(2) = x(3) - x(5);
+%ceq(2) = x(3) - x(5);
 
 %=-=-=-=-=-diff and form-=-=-=-=
 

@@ -114,7 +114,7 @@ q_index = q_index + 1;
 %handle web_l
 pos2 = wing.stringer8.position;
 
-for s = wing.skin_br.stringers
+for it = (1:(length(wing.skin_br.stringers)-1))
     pos3 = s.position;
     area = polyarea([start_pos(1), pos2(1), pos3(1)], [start_pos(2), pos2(2), pos3(2)])
     mom_fn = mom_fn + 2 * q_vec(q_index) * area;

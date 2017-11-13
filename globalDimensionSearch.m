@@ -9,7 +9,7 @@ gs = GlobalSearch;
 x0 = wing2DimensionVector(wing); % initial guess of the wing dims
 
 ub = ones(1, length(x0));
-lb = ones(1, length(x0)) * 0.0001;
+lb = ones(1, length(x0)) * 0.0005;
 
 options = optimoptions(@fmincon,'Algorithm','sqp');
 options = optimoptions(options,'SpecifyObjectiveGradient',true,'SpecifyConstraintGradient',true);
