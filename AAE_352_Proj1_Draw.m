@@ -214,9 +214,9 @@ function colorstr = colorswitch(colorval)
         case 1
             colorstr = 'red';
         case 2
-            colorstr = 'yellow';
-        case 3
             colorstr = 'green';
+        case 3
+            colorstr = 'yellow';
         case 4
             colorstr = 'blue';
         otherwise
