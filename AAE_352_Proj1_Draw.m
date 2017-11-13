@@ -74,7 +74,7 @@ for s = (wing.skin_tr.stringers)
     stringer_material = [stringer_material, s.material.type];
 end
 
-for s = (wing.skin_br.stringers)
+for s = (wing.skin_bl.stringers)
     stringer_x_val = [stringer_x_val, s.position(1)];
     stringer_y_val = [stringer_y_val, s.position(2)];
     stringer_area = [stringer_area, s.area];
